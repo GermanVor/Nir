@@ -1,0 +1,18 @@
+.App {
+    position: relative;
+
+    &__Rectangle {
+        width: 50px;
+        height: 50px;
+
+        background-color: red;
+    }
+
+    &__Canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+}

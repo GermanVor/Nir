@@ -1,0 +1,12 @@
+brew install postgresql
+
+brew services start postgresql
+psql postgres
+postgres=# CREATE ROLE <<.env PGUSER>> WITH LOGIN PASSWORD '<<.env PGPASSWORD>>';
+postgres=# ALTER ROLE <<.env PGUSER>> CREATEDB;
+postgres=# \q
+psql -d postgres -U <<.env PGUSER>>
+postgres=> CREATE DATABASE <<.env PGDATABASE>>;
+postgres=> \c api
+
+brew services stop postgresql
